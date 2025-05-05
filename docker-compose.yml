@@ -3,7 +3,41 @@ services:
   structurizr:
     image: structurizr/lite
     container_name: structurizr
+    env_file:
+      - .env
     ports:
-      - "8080:8080"
+      - "${STRUCTURIZR_PORT}:8080"
     volumes:
       - ./structurizr:/usr/local/structurizr
+
+  skattur_db:
+    image: postgres:17.4
+    container_name: skattur_db
+    env_file:
+      - .env
+    environment:
+      POSTGRES_DB: skattur_db
+      POSTGRES_USER: ${SKATTUR_DB_USER}
+      POSTGRES_PASSWORD: ${SKATTUR_DB_PASSWORD}
+    ports:
+      - "${SKATTUR_DB_PORT}:5432"
+    volumes:
+      - skattur_data:/var/lib/postgresql/data
+
+  national_registry_db:
+    image: postgres:17.4
+    container_name: national_registry_db
+    env_file:
+      - .env
+    environment:
+      POSTGRES_DB: national_registry_db
+      POSTGRES_USER: ${NATIONAL_REGISTRY_DB_USER}
+      POSTGRES_PASSWORD: ${NATIONAL_REGISTRY_DB_PASSWORD}
+    ports:
+      - "${NATIONAL_REGISTRY_DB_PORT}:5432"
+    volumes:
+      - national_registry_data:/var/lib/postgresql/data
+
+volumes:
+  skattur_data:
+  national_registry_data:      
