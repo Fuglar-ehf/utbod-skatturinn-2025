@@ -3,7 +3,11 @@
   "version": "0.0.0",
   "license": "MIT",
   "scripts": {
-    "structurizr": "docker compose up structurizr"
+    "structurizr": "docker compose up -d structurizr",
+    "skattur_db": "docker compose up -d skattur_db",
+    "national_registry_db": "docker compose up -d national_registry_db",
+    "docker_down": "docker compose down",
+    "all": "docker compose up -d"
   },
   "private": true,
   "dependencies": {
