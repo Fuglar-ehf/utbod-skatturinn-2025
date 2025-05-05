@@ -1,0 +1,13 @@
+{
+  "name": "national-registry",
+  "version": "1.0.0",
+  "main": "dist/main.js",
+  "license": "MIT",
+  "dependencies": {
+    "@nestjs/sequelize": "^11.0.0",
+    "pg": "^8.15.6",
+    "pg-hstore": "^2.3.4",
+    "sequelize": "^6.37.7",
+    "sequelize-typescript": "^2.1.6"
+  }
+}
