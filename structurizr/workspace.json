@@ -1,0 +1,148 @@
+{
+  "configuration" : { },
+  "description" : "Description",
+  "documentation" : { },
+  "id" : 1,
+  "lastModifiedAgent" : "structurizr-ui",
+  "lastModifiedDate" : "2025-05-05T17:14:15Z",
+  "model" : {
+    "people" : [ {
+      "description" : "A citizen or resident using island.is",
+      "id" : "1",
+      "location" : "Unspecified",
+      "name" : "User",
+      "properties" : {
+        "structurizr.dsl.identifier" : "user"
+      },
+      "relationships" : [ {
+        "description" : "Uses through browser",
+        "destinationId" : "2",
+        "id" : "5",
+        "sourceId" : "1",
+        "tags" : "Relationship"
+      } ],
+      "tags" : "Element,Person"
+    } ],
+    "softwareSystems" : [ {
+      "description" : "Frontend portal for government services",
+      "documentation" : { },
+      "id" : "2",
+      "location" : "Unspecified",
+      "name" : "island.is",
+      "properties" : {
+        "structurizr.dsl.identifier" : "islandis"
+      },
+      "relationships" : [ {
+        "description" : "Sends user requests",
+        "destinationId" : "3",
+        "id" : "6",
+        "sourceId" : "2",
+        "tags" : "Relationship"
+      }, {
+        "description" : "Fetches identity data",
+        "destinationId" : "4",
+        "id" : "7",
+        "sourceId" : "2",
+        "tags" : "Relationship"
+      } ],
+      "tags" : "Element,Software System"
+    }, {
+      "description" : "Backend API for Skatturinn services",
+      "documentation" : { },
+      "id" : "3",
+      "location" : "Unspecified",
+      "name" : "skatturinn-api",
+      "properties" : {
+        "structurizr.dsl.identifier" : "skattapi"
+      },
+      "relationships" : [ {
+        "description" : "Fetches registry data",
+        "destinationId" : "4",
+        "id" : "8",
+        "sourceId" : "3",
+        "tags" : "Relationship"
+      } ],
+      "tags" : "Element,Software System"
+    }, {
+      "description" : "External API that provides registry data",
+      "documentation" : { },
+      "id" : "4",
+      "location" : "Unspecified",
+      "name" : "National Registry API",
+      "properties" : {
+        "structurizr.dsl.identifier" : "natregapi"
+      },
+      "tags" : "Element,Software System,external"
+    } ]
+  },
+  "name" : "Name",
+  "properties" : {
+    "structurizr.dsl" : "d29ya3NwYWNlIHsKCiAgbW9kZWwgewogICAgdXNlciA9IHBlcnNvbiAiVXNlciIgewogICAgICBkZXNjcmlwdGlvbiAiQSBjaXRpemVuIG9yIHJlc2lkZW50IHVzaW5nIGlzbGFuZC5pcyIKICAgIH0KCiAgICBpc2xhbmRJcyA9IHNvZnR3YXJlU3lzdGVtICJpc2xhbmQuaXMiIHsKICAgICAgZGVzY3JpcHRpb24gIkZyb250ZW5kIHBvcnRhbCBmb3IgZ292ZXJubWVudCBzZXJ2aWNlcyIKICAgIH0KCiAgICBza2F0dEFwaSA9IHNvZnR3YXJlU3lzdGVtICJza2F0dHVyaW5uLWFwaSIgewogICAgICBkZXNjcmlwdGlvbiAiQmFja2VuZCBBUEkgZm9yIFNrYXR0dXJpbm4gc2VydmljZXMiCiAgICB9CgogICAgbmF0UmVnQXBpID0gc29mdHdhcmVTeXN0ZW0gIk5hdGlvbmFsIFJlZ2lzdHJ5IEFQSSIgewogICAgICBkZXNjcmlwdGlvbiAiRXh0ZXJuYWwgQVBJIHRoYXQgcHJvdmlkZXMgcmVnaXN0cnkgZGF0YSIKICAgICAgdGFncyAiZXh0ZXJuYWwiCiAgICB9CgogICAgdXNlciAtPiBpc2xhbmRJcyAiVXNlcyB0aHJvdWdoIGJyb3dzZXIiCiAgICBpc2xhbmRJcyAtPiBza2F0dEFwaSAiU2VuZHMgdXNlciByZXF1ZXN0cyIKICAgIGlzbGFuZElzIC0+IG5hdFJlZ0FwaSAiRmV0Y2hlcyBpZGVudGl0eSBkYXRhIgogICAgc2thdHRBcGkgLT4gbmF0UmVnQXBpICJGZXRjaGVzIHJlZ2lzdHJ5IGRhdGEiCiAgfQoKICB2aWV3cyB7CiAgICBzeXN0ZW1Db250ZXh0IHNrYXR0QXBpIHsKICAgICAgaW5jbHVkZSAqCiAgICAgIGF1dG9sYXlvdXQgbHIKICAgICAgZGVzY3JpcHRpb24gIlN5c3RlbSBjb250ZXh0IGZvciBTa2F0dHVyaW5uIEFQSSIKICAgIH0KCiAgICBzdHlsZXMgewogICAgICBlbGVtZW50ICJQZXJzb24iIHsKICAgICAgICBzaGFwZSBwZXJzb24KICAgICAgICBiYWNrZ3JvdW5kICMwODQyN2IKICAgICAgICBjb2xvciAjZmZmZmZmCiAgICAgIH0KCiAgICAgIGVsZW1lbnQgIlNvZnR3YXJlIFN5c3RlbSIgewogICAgICAgIHNoYXBlIHJvdW5kZWRib3gKICAgICAgICBiYWNrZ3JvdW5kICMxMTY4YmQKICAgICAgICBjb2xvciAjZmZmZmZmCiAgICAgIH0KCiAgICAgIGVsZW1lbnQgImV4dGVybmFsIiB7CiAgICAgICAgYmFja2dyb3VuZCAjYmJiYmJiCiAgICAgICAgY29sb3IgIzAwMDAwMAogICAgICB9CiAgICB9CiAgfQp9"
+  },
+  "views" : {
+    "configuration" : {
+      "branding" : { },
+      "lastSavedView" : "SystemContext-001",
+      "metadataSymbols" : "SquareBrackets",
+      "styles" : {
+        "elements" : [ {
+          "background" : "#08427b",
+          "color" : "#ffffff",
+          "shape" : "Person",
+          "tag" : "Person"
+        }, {
+          "background" : "#1168bd",
+          "color" : "#ffffff",
+          "shape" : "RoundedBox",
+          "tag" : "Software System"
+        }, {
+          "background" : "#bbbbbb",
+          "color" : "#000000",
+          "tag" : "external"
+        } ]
+      },
+      "terminology" : { }
+    },
+    "systemContextViews" : [ {
+      "automaticLayout" : {
+        "applied" : true,
+        "edgeSeparation" : 0,
+        "implementation" : "Graphviz",
+        "nodeSeparation" : 300,
+        "rankDirection" : "LeftRight",
+        "rankSeparation" : 300,
+        "vertices" : false
+      },
+      "description" : "System context for Skatturinn API",
+      "dimensions" : {
+        "height" : 1004,
+        "width" : 2350
+      },
+      "elements" : [ {
+        "id" : "2",
+        "x" : 200,
+        "y" : 456
+      }, {
+        "id" : "3",
+        "x" : 950,
+        "y" : 152
+      }, {
+        "id" : "4",
+        "x" : 1700,
+        "y" : 456
+      } ],
+      "enterpriseBoundaryVisible" : true,
+      "generatedKey" : true,
+      "key" : "SystemContext-001",
+      "order" : 1,
+      "relationships" : [ {
+        "id" : "6"
+      }, {
+        "id" : "7"
+      }, {
+        "id" : "8"
+      } ],
+      "softwareSystemId" : "3"
+    } ]
+  }
+}
