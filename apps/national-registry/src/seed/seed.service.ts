@@ -1,4 +1,4 @@
-import { Injectable, OnModuleInit } from '@nestjs/common';
+import { Injectable } from '@nestjs/common';
 import { InjectModel } from '@nestjs/sequelize';
 import { Person } from '../models/person.model';
 import { parseStringPromise } from 'xml2js';
@@ -16,13 +16,13 @@ function asText(val: any): string {
 }
 
 @Injectable()
-export class SeedService implements OnModuleInit {
+export class SeedService {
   constructor(
     @InjectModel(Person)
     private readonly personModel: typeof Person
   ) {}
 
-  async onModuleInit() {
+  async run() {
     const xmlPath = path.join(
       __dirname,
       '../../assets/thjothskra-gervigogn.xml'
