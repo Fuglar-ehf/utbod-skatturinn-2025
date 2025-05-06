@@ -12,7 +12,7 @@
     "xml2js": "^0.6.2"
   },
   "scripts": {
-    "build": "nest build",
+    "build": "nest build && xcopy assets ..\\..\\dist\\apps\\national-registry\\assets\\ /E /I /Y",
     "start": "ts-node -r tsconfig-paths/register src/main.ts",
     "start:dev": "nest start --watch"
   },
