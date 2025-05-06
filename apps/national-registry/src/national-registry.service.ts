@@ -9,7 +9,7 @@ export class NationalRegistryService {
     private readonly personModel: typeof Person
   ) {}
 
-  async findByKennitala(kennitala: string): Promise<Person | null> {
-    return this.personModel.findOne({ where: { national_id: kennitala } });
+  async findByNationalId(national_id: string): Promise<Person | null> {
+    return this.personModel.findOne({ where: { national_id: national_id } });
   }
 }

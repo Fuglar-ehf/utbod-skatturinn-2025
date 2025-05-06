@@ -8,14 +8,16 @@ export class NationalRegistryController {
     private readonly nationalRegistryService: NationalRegistryService
   ) {}
 
-  @Get(':kennitala')
-  async getByKennitala(@Param('kennitala') kennitala: string): Promise<Person> {
-    const person = await this.nationalRegistryService.findByKennitala(
-      kennitala
+  @Get(':national_id')
+  async getByNationalId(
+    @Param('national_id') national_id: string
+  ): Promise<Person> {
+    const person = await this.nationalRegistryService.findByNationalId(
+      national_id
     );
     if (!person) {
       throw new NotFoundException(
-        `Person with kennitala ${kennitala} not found`
+        `Person with national id ${national_id} not found`
       );
     }
     return person;
