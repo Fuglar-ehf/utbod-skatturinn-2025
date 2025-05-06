@@ -1,52 +1,53 @@
 workspace {
 
   model {
-    user = person "User" {
-      description "A citizen or resident using island.is"
-    }
-
-    islandIs = softwareSystem "island.is" {
-      description "Frontend portal for government services"
-    }
-
-    skattApi = softwareSystem "skatturinn-api" {
-      description "Backend API for Skatturinn services"
-    }
-
-    natRegApi = softwareSystem "National Registry API" {
-      description "External API that provides registry data"
-      tags "external"
-    }
-
-    user -> islandIs "Uses through browser"
-    islandIs -> skattApi "Sends user requests"
-    islandIs -> natRegApi "Fetches identity data"
-    skattApi -> natRegApi "Fetches registry data"
+      !include people-and-software-systems.dsl
   }
 
   views {
-    systemContext skattApi {
+    systemContext taxReturnPortal {
       include *
       autolayout lr
-      description "System context for Skatturinn API"
+      description "System context for tax return portal"
+    }
+
+    container taxReturnPortal {
+      include *
+      include thjodskra_api
+      autolayout lr
+      description "Container diagram for tax return portal"
     }
 
     styles {
-      element "Person" {
-        shape person
-        background #08427b
-        color #ffffff
-      }
-
       element "Software System" {
-        shape roundedbox
-        background #1168bd
-        color #ffffff
+          background #1168bd
+          color #ffffff
       }
-
-      element "external" {
-        background #bbbbbb
-        color #000000
+      element "Existing System" {
+          background #ebecf0
+          color #000000
+      }
+      element "Person" {
+          shape person
+          background #08427b
+          color #ffffff
+      }
+      element "Container" {
+          background #438dd5
+          color #ffffff
+      }
+      element "Web Browser" {
+          shape WebBrowser
+      }
+      element "Database" {
+          shape Cylinder
+      }
+      element "Component" {
+          background #85bbf0
+          color #000000
+      }
+      element "Failover" {
+          opacity 25
       }
     }
   }
