@@ -1,8 +1,0 @@
-const path = require('path');
-
-module.exports = {
-  'config': path.resolve('apps/skatturinn-api/config/config.js'),
-  'migrations-path': path.resolve('apps/skatturinn-api/src/migrations'),
-  'models-path': path.resolve('apps/skatturinn-api/src/models'),
-  'seeders-path': path.resolve('apps/skatturinn-api/src/seeders'),
-};
