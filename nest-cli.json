@@ -12,15 +12,6 @@
       "compilerOptions": {
         "tsConfigPath": "apps/.-source/tsconfig.app.json"
       }
-    },
-    "national-registry": {
-      "type": "application",
-      "root": "apps/national-registry",
-      "entryFile": "main",
-      "sourceRoot": "apps/national-registry/src",
-      "compilerOptions": {
-        "tsConfigPath": "apps/national-registry/tsconfig.app.json"
-      }
     }
   }
 }

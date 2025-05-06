@@ -10,6 +10,9 @@
       "path": "./apps/skatturinn-api"
     },
     {
+      "path": "./apps/national-registry-e2e"
+    },
+    {
       "path": "./apps/national-registry"
     }
   ],

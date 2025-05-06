@@ -1,29 +1,47 @@
 {
   "name": "national-registry",
-  "version": "1.0.0",
-  "main": "dist/main.js",
-  "license": "MIT",
-  "dependencies": {
-    "@nestjs/sequelize": "^11.0.0",
-    "@nestjs/swagger": "^11.2.0",
-    "pg": "^8.15.6",
-    "pg-hstore": "^2.3.4",
-    "sequelize": "^6.37.7",
-    "sequelize-typescript": "^2.1.6",
-    "swagger-ui-express": "^5.0.1",
-    "xml2js": "^0.6.2"
-  },
+  "version": "0.0.1",
+  "private": true,
   "scripts": {
-    "build": "node ../../node_modules/@nestjs/cli/bin/nest.js build --config tsconfig.app.json",
-    "postbuild": "node -e \"require('os').platform() === 'win32' ? require('child_process').execSync('xcopy assets ..\\\\..\\\\dist\\\\apps\\\\national-registry\\\\assets\\\\ /E /I /Y', { stdio: 'inherit' }) : require('child_process').execSync('cp -r assets ../../dist/apps/national-registry/assets/', { stdio: 'inherit' })\"",
-    "start": "ts-node -r tsconfig-paths/register src/main.ts",
-    "start:dev": "nest start --watch",
-    "seed": "ts-node -r tsconfig-paths/register src/seed.ts"
+    "seed": "ts-node src/seed.ts"
   },
-  "devDependencies": {
-    "@types/xml2js": "^0.4.14",
-    "ts-node": "^10.9.2",
-    "tsconfig-paths": "^4.2.0",
-    "typescript": "^5.8.3"
+  "nx": {
+    "targets": {
+      "build": {
+        "executor": "nx:run-commands",
+        "options": {
+          "command": "webpack-cli build",
+          "args": [
+            "node-env=production"
+          ]
+        },
+        "configurations": {
+          "development": {
+            "args": [
+              "node-env=development"
+            ]
+          }
+        }
+      },
+      "serve": {
+        "executor": "@nx/js:node",
+        "defaultConfiguration": "development",
+        "dependsOn": [
+          "build"
+        ],
+        "options": {
+          "buildTarget": "national-registry:build",
+          "runBuildTargetDependencies": false
+        },
+        "configurations": {
+          "development": {
+            "buildTarget": "national-registry:build:development"
+          },
+          "production": {
+            "buildTarget": "national-registry:build:production"
+          }
+        }
+      }
+    }
   }
 }
