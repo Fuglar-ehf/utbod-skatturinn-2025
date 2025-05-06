@@ -56,7 +56,10 @@
       "options": {
         "targetName": "test"
       },
-      "exclude": ["apps/skatturinn-api-e2e/**/*"]
+      "exclude": [
+        "apps/skatturinn-api-e2e/**/*",
+        "apps/national-registry-e2e/**/*"
+      ]
     }
   ],
   "targetDefaults": {
