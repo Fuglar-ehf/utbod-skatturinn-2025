@@ -8,6 +8,9 @@
     },
     {
       "path": "./apps/skatturinn-api"
+    },
+    {
+      "path": "./apps/national-registry"
     }
   ],
   "compilerOptions": {
