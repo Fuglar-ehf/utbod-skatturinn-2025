@@ -4,7 +4,7 @@
   "documentation" : { },
   "id" : 1,
   "lastModifiedAgent" : "structurizr-ui",
-  "lastModifiedDate" : "2025-05-06T09:31:01Z",
+  "lastModifiedDate" : "2025-05-06T14:49:28Z",
   "model" : {
     "people" : [ {
       "description" : "A person filing taxes in Iceland",
@@ -23,7 +23,7 @@
       }, {
         "description" : "Views and submits tax return",
         "destinationId" : "8",
-        "id" : "19",
+        "id" : "20",
         "sourceId" : "1",
         "tags" : "Relationship"
       } ],
@@ -49,31 +49,6 @@
         "properties" : {
           "structurizr.dsl.identifier" : "serviceportalapi"
         },
-        "relationships" : [ {
-          "description" : "Provides tax return data",
-          "destinationId" : "9",
-          "id" : "23",
-          "sourceId" : "4",
-          "tags" : "Relationship"
-        }, {
-          "description" : "Provides tax return data",
-          "destinationId" : "7",
-          "id" : "24",
-          "linkedRelationshipId" : "23",
-          "sourceId" : "4"
-        }, {
-          "description" : "Provides user information",
-          "destinationId" : "12",
-          "id" : "27",
-          "sourceId" : "4",
-          "tags" : "Relationship"
-        }, {
-          "description" : "Provides user information",
-          "destinationId" : "11",
-          "id" : "28",
-          "linkedRelationshipId" : "27",
-          "sourceId" : "4"
-        } ],
         "tags" : "Element,Container",
         "technology" : "GraphQL"
       } ],
@@ -86,31 +61,6 @@
       "properties" : {
         "structurizr.dsl.identifier" : "serviceportal"
       },
-      "relationships" : [ {
-        "description" : "Provides tax return data",
-        "destinationId" : "9",
-        "id" : "25",
-        "linkedRelationshipId" : "23",
-        "sourceId" : "3"
-      }, {
-        "description" : "Provides tax return data",
-        "destinationId" : "7",
-        "id" : "26",
-        "linkedRelationshipId" : "23",
-        "sourceId" : "3"
-      }, {
-        "description" : "Provides user information",
-        "destinationId" : "12",
-        "id" : "29",
-        "linkedRelationshipId" : "27",
-        "sourceId" : "3"
-      }, {
-        "description" : "Provides user information",
-        "destinationId" : "11",
-        "id" : "30",
-        "linkedRelationshipId" : "27",
-        "sourceId" : "3"
-      } ],
       "tags" : "Element,Software System,Existing System"
     }, {
       "description" : "Enables users to authenticate securely",
@@ -144,17 +94,23 @@
           "structurizr.dsl.identifier" : "taxreturnapplication"
         },
         "relationships" : [ {
-          "description" : "Provides tax return information",
-          "destinationId" : "4",
-          "id" : "20",
+          "description" : "Provides user information",
+          "destinationId" : "12",
+          "id" : "21",
           "sourceId" : "8",
           "tags" : "Relationship"
         }, {
-          "description" : "Provides tax return information",
-          "destinationId" : "3",
-          "id" : "21",
-          "linkedRelationshipId" : "20",
+          "description" : "Provides user information",
+          "destinationId" : "11",
+          "id" : "22",
+          "linkedRelationshipId" : "21",
           "sourceId" : "8"
+        }, {
+          "description" : "Submits tax return data",
+          "destinationId" : "9",
+          "id" : "24",
+          "sourceId" : "8",
+          "tags" : "Relationship"
         } ],
         "tags" : "Element,Container",
         "technology" : "React"
@@ -169,7 +125,7 @@
         "relationships" : [ {
           "description" : "Stores tax return data",
           "destinationId" : "10",
-          "id" : "31",
+          "id" : "25",
           "sourceId" : "9",
           "tags" : "Relationship"
         } ],
@@ -219,10 +175,16 @@
         "sourceId" : "7",
         "tags" : "Relationship"
       }, {
-        "description" : "Provides tax return information",
-        "destinationId" : "4",
-        "id" : "22",
-        "linkedRelationshipId" : "20",
+        "description" : "Provides user information",
+        "destinationId" : "11",
+        "id" : "19",
+        "sourceId" : "7",
+        "tags" : "Relationship"
+      }, {
+        "description" : "Provides user information",
+        "destinationId" : "12",
+        "id" : "23",
+        "linkedRelationshipId" : "21",
         "sourceId" : "7"
       } ],
       "tags" : "Element,Software System"
@@ -260,12 +222,12 @@
   },
   "name" : "Name",
   "properties" : {
-    "structurizr.dsl" : "d29ya3NwYWNlIHsKCiAgbW9kZWwgewogICAgICAgICAgCiAgICAgICAgICB0YXhQYXllciA9IHBlcnNvbiAiVGF4IFBheWVyIiB7CiAgICAgICAgICAgIGRlc2NyaXB0aW9uICJBIHBlcnNvbiBmaWxpbmcgdGF4ZXMgaW4gSWNlbGFuZCIKICAgICAgICAgIH0KICAgICAgCiAgICAgIGdyb3VwICJpc2xhbmQuaXMiIHsKICAgICAgICAgIAogICAgICAgICAgYXBwbGljYXRpb25TeXN0ZW0gPSBzb2Z0d2FyZXN5c3RlbSAiQXBwbGljYXRpb24gU3lzdGVtIiB7CiAgICAgICAgICAgIGRlc2NyaXB0aW9uICJDb29yZGluYXRlcyBhcHBsaWNhdGlvbiBwcm9jZXNzZXMiCiAgICAgICAgICAgIHRhZ3MgIkV4aXN0aW5nIFN5c3RlbSIKICAgICAgICAgIH0KICAgICAgICAgIAogICAgICAgICAgc2VydmljZVBvcnRhbCA9IHNvZnR3YXJlU3lzdGVtICJTZXJ2aWNlIFBvcnRhbCIgewogICAgICAgICAgICBkZXNjcmlwdGlvbiAiUHJvdmlkZXMgdXNlciBzcGVjaWZpYyBkYXRhIgogICAgICAgICAgICB0YWdzICJFeGlzdGluZyBTeXN0ZW0iCiAgICAgICAgICAKICAgICAgICAgICAgc2VydmljZVBvcnRhbEFwaSA9IGNvbnRhaW5lciAiU2VydmljZSBQb3J0YWwgQVBJIiB7CiAgICAgICAgICAgICAgZGVzY3JpcHRpb24gIlByb3ZpZGVzIHVzZXIgc3BlY2lmaWMgZGF0YSIKICAgICAgICAgICAgICB0ZWNobm9sb2d5ICJHcmFwaFFMIgogICAgICAgICAgICB9CiAgICAgICAgICB9CiAgICAgICAgICAKICAgICAgICAgIGlhcyA9IHNvZnR3YXJlU3lzdGVtICJBdXRoZW50aWNhdGlvbiBTZXJ2aWNlIiB7CiAgICAgICAgICAgIGRlc2NyaXB0aW9uICJFbmFibGVzIHVzZXJzIHRvIGF1dGhlbnRpY2F0ZSBzZWN1cmVseSIKICAgICAgICAgICAgdGFncyAiRXhpc3RpbmcgU3lzdGVtIgogICAgICAgICAgfQogICAgICAgICAgCiAgICAgICAgICB3ZWIgPSBzb2Z0d2FyZVN5c3RlbSAiV2ViIiB7CiAgICAgICAgICAgIGRlc2NyaXB0aW9uICJEaXNwbGF5cyBjb250ZW50IGluIGEgdXNlciBmcmllbmRseSB3YXkiCiAgICAgICAgICAgIHRhZ3MgIkV4aXN0aW5nIFN5c3RlbSIKICAgICAgICAgIH0KICAgICAgfQogICAgICAKICAgICAgCiAgICAgIHRheFJldHVyblBvcnRhbCA9IHNvZnR3YXJlU3lzdGVtICJUYXggUmV0dXJuIFBvcnRhbCIgIkVuYWJsZXMgdXNlcnMgdG8gZmlsZSB0aGVpciB0YXggcmV0dXJucyBvbmxpbmUiIHsKICAgICAgICAgIHRheFJldHVybkFwcGxpY2F0aW9uID0gY29udGFpbmVyICJUYXggUmV0dXJuIEFwcGxpY2F0aW9uIiB7CiAgICAgICAgICAgICAgZGVzY3JpcHRpb24gIkNvb3JkaW5hdGVzIHRheCByZXR1cm4gcHJvY2Vzc2VzIgogICAgICAgICAgICAgIHRlY2hub2xvZ3kgIlJlYWN0IgogICAgICAgICAgfQogICAgICAKICAgICAgICAgIHNrYXR0dXJBcGkgPSBjb250YWluZXIgIlNrYXR0dXIgQVBJIiB7CiAgICAgICAgICAgICAgZGVzY3JpcHRpb24gIlByb3ZpZGVzIHRheCByZXR1cm4gZGF0YSIKICAgICAgICAgICAgICB0ZWNobm9sb2d5ICJFeHByZXNzLmpzIgogICAgICAgICAgfQogICAgICAKICAgICAgICAgIHNrYXR0dXJEYiA9IGNvbnRhaW5lciAiU2thdHR1ciBEQiIgewogICAgICAgICAgICAgIGRlc2NyaXB0aW9uICJEYXRhYmFzZSBmb3IgdGF4IHJldHVybiBkYXRhIgogICAgICAgICAgICAgIHRlY2hub2xvZ3kgIlBvc3RncmVTUUwiCiAgICAgICAgICAgICAgdGFncyAiRGF0YWJhc2UiCiAgICAgICAgICB9CiAgICAgIH0KICAgICAgCiAgICAgIAogICAgICB0aGpvZHNrcmEgPSBzb2Z0d2FyZVN5c3RlbSAiw55qw7PDsHNrcsOhIiAiSWNlbGFuZCBOYXRpb25hbCBSZWdpc3RyeSIgIkV4aXN0aW5nIFN5c3RlbSIgewogICAgICAgICAgdGhqb2Rza3JhX2FwaSA9IGNvbnRhaW5lciAiw55qw7PDsHNrcsOhIEFQSSIgIkVpbnN0YWtsaW5nYXIgQVBJIMOeasOzw7Bza3LDoXIuIgogICAgICAgICAgdGhqb2Rza3JhX3hyb2FkID0gY29udGFpbmVyICLDnmrDs8Owc2tyw6EgWC1Sb2FkIiAiWC1Sb2FkIMO2cnlnZ2lzw75qw7NubiDDnmrDs8Owc2tyw6FyLiIgIlgtUm9hZCIKICAgICAgfQogICAgICAKICAgICAgCiAgICAgICMgdGF4UGF5ZXIgLT4gd2ViICJWaWV3cyBpbmZvcm1hdGlvbiBhYm91dCB0YXggcmV0dXJucyIKICAgICAgdGF4UGF5ZXIgLT4gdGF4UmV0dXJuUG9ydGFsICJWaWV3cyBhbmQgc3VibWl0cyB0YXggcmV0dXJucyIKICAgICAgIyB0YXhQYXllciAtPiBteVBhZ2VzICJWaWV3cyBzdWJtaXR0ZWQgdGF4IHJldHVybnMiCiAgICAgIAogICAgICB0YXhSZXR1cm5Qb3J0YWwgLT4gaWFzICJBdXRoZW50aWNhdGVzIHVzZXJzIgogICAgICB0YXhSZXR1cm5Qb3J0YWwgLT4gYXBwbGljYXRpb25TeXN0ZW0gIkNvb3JkaW5hdGVzIHRheCByZXR1cm4gcHJvY2VzcyIKICAgICAgdGF4UmV0dXJuUG9ydGFsIC0+IHdlYiAiUHJvdmlkZXMgaW5mb3JtYXRpb24gYWJvdXQgdGF4IHJldHVybnMiCiAgICAgIHRheFJldHVyblBvcnRhbCAtPiBzZXJ2aWNlUG9ydGFsICJQcm92aWRlcyB1c2VycyB0YXggcmV0dXJuIGluZm9ybWF0aW9uIgogICAgICAKICAgICAgCiAgICAgIHRheFBheWVyIC0+IHRheFJldHVybkFwcGxpY2F0aW9uICJWaWV3cyBhbmQgc3VibWl0cyB0YXggcmV0dXJuIgogICAgICAKICAgICAgdGF4UmV0dXJuQXBwbGljYXRpb24gLT4gc2VydmljZVBvcnRhbEFwaSAiUHJvdmlkZXMgdGF4IHJldHVybiBpbmZvcm1hdGlvbiIKICAgICAgCiAgICAgIHNlcnZpY2VQb3J0YWxBcGkgLT4gc2thdHR1ckFwaSAiUHJvdmlkZXMgdGF4IHJldHVybiBkYXRhIgogICAgICBzZXJ2aWNlUG9ydGFsQXBpIC0+IHRoam9kc2tyYV9hcGkgIlByb3ZpZGVzIHVzZXIgaW5mb3JtYXRpb24iCiAgICAgIAogICAgICBza2F0dHVyQXBpIC0+IHNrYXR0dXJEYiAiU3RvcmVzIHRheCByZXR1cm4gZGF0YSIKICB9CgogIHZpZXdzIHsKICAgIHN5c3RlbUNvbnRleHQgdGF4UmV0dXJuUG9ydGFsIHsKICAgICAgaW5jbHVkZSAqCiAgICAgIGF1dG9sYXlvdXQgbHIKICAgICAgZGVzY3JpcHRpb24gIlN5c3RlbSBjb250ZXh0IGZvciB0YXggcmV0dXJuIHBvcnRhbCIKICAgIH0KCiAgICBjb250YWluZXIgdGF4UmV0dXJuUG9ydGFsIHsKICAgICAgaW5jbHVkZSAqCiAgICAgIGluY2x1ZGUgdGhqb2Rza3JhX2FwaQogICAgICBhdXRvbGF5b3V0IGxyCiAgICAgIGRlc2NyaXB0aW9uICJDb250YWluZXIgZGlhZ3JhbSBmb3IgdGF4IHJldHVybiBwb3J0YWwiCiAgICB9CgogICAgc3R5bGVzIHsKICAgICAgZWxlbWVudCAiU29mdHdhcmUgU3lzdGVtIiB7CiAgICAgICAgICBiYWNrZ3JvdW5kICMxMTY4YmQKICAgICAgICAgIGNvbG9yICNmZmZmZmYKICAgICAgfQogICAgICBlbGVtZW50ICJFeGlzdGluZyBTeXN0ZW0iIHsKICAgICAgICAgIGJhY2tncm91bmQgI2ViZWNmMAogICAgICAgICAgY29sb3IgIzAwMDAwMAogICAgICB9CiAgICAgIGVsZW1lbnQgIlBlcnNvbiIgewogICAgICAgICAgc2hhcGUgcGVyc29uCiAgICAgICAgICBiYWNrZ3JvdW5kICMwODQyN2IKICAgICAgICAgIGNvbG9yICNmZmZmZmYKICAgICAgfQogICAgICBlbGVtZW50ICJDb250YWluZXIiIHsKICAgICAgICAgIGJhY2tncm91bmQgIzQzOGRkNQogICAgICAgICAgY29sb3IgI2ZmZmZmZgogICAgICB9CiAgICAgIGVsZW1lbnQgIldlYiBCcm93c2VyIiB7CiAgICAgICAgICBzaGFwZSBXZWJCcm93c2VyCiAgICAgIH0KICAgICAgZWxlbWVudCAiRGF0YWJhc2UiIHsKICAgICAgICAgIHNoYXBlIEN5bGluZGVyCiAgICAgIH0KICAgICAgZWxlbWVudCAiQ29tcG9uZW50IiB7CiAgICAgICAgICBiYWNrZ3JvdW5kICM4NWJiZjAKICAgICAgICAgIGNvbG9yICMwMDAwMDAKICAgICAgfQogICAgICBlbGVtZW50ICJGYWlsb3ZlciIgewogICAgICAgICAgb3BhY2l0eSAyNQogICAgICB9CiAgICB9CiAgfQp9"
+    "structurizr.dsl" : "d29ya3NwYWNlIHsKCiAgbW9kZWwgewogICAgICAgICAgCiAgICAgICAgICB0YXhQYXllciA9IHBlcnNvbiAiVGF4IFBheWVyIiB7CiAgICAgICAgICAgIGRlc2NyaXB0aW9uICJBIHBlcnNvbiBmaWxpbmcgdGF4ZXMgaW4gSWNlbGFuZCIKICAgICAgICAgIH0KICAgICAgCiAgICAgIGdyb3VwICJpc2xhbmQuaXMiIHsKICAgICAgICAgIAogICAgICAgICAgYXBwbGljYXRpb25TeXN0ZW0gPSBzb2Z0d2FyZXN5c3RlbSAiQXBwbGljYXRpb24gU3lzdGVtIiB7CiAgICAgICAgICAgIGRlc2NyaXB0aW9uICJDb29yZGluYXRlcyBhcHBsaWNhdGlvbiBwcm9jZXNzZXMiCiAgICAgICAgICAgIHRhZ3MgIkV4aXN0aW5nIFN5c3RlbSIKICAgICAgICAgIH0KICAgICAgICAgIAogICAgICAgICAgc2VydmljZVBvcnRhbCA9IHNvZnR3YXJlU3lzdGVtICJTZXJ2aWNlIFBvcnRhbCIgewogICAgICAgICAgICBkZXNjcmlwdGlvbiAiUHJvdmlkZXMgdXNlciBzcGVjaWZpYyBkYXRhIgogICAgICAgICAgICB0YWdzICJFeGlzdGluZyBTeXN0ZW0iCiAgICAgICAgICAKICAgICAgICAgICAgc2VydmljZVBvcnRhbEFwaSA9IGNvbnRhaW5lciAiU2VydmljZSBQb3J0YWwgQVBJIiB7CiAgICAgICAgICAgICAgZGVzY3JpcHRpb24gIlByb3ZpZGVzIHVzZXIgc3BlY2lmaWMgZGF0YSIKICAgICAgICAgICAgICB0ZWNobm9sb2d5ICJHcmFwaFFMIgogICAgICAgICAgICB9CiAgICAgICAgICB9CiAgICAgICAgICAKICAgICAgICAgIGlhcyA9IHNvZnR3YXJlU3lzdGVtICJBdXRoZW50aWNhdGlvbiBTZXJ2aWNlIiB7CiAgICAgICAgICAgIGRlc2NyaXB0aW9uICJFbmFibGVzIHVzZXJzIHRvIGF1dGhlbnRpY2F0ZSBzZWN1cmVseSIKICAgICAgICAgICAgdGFncyAiRXhpc3RpbmcgU3lzdGVtIgogICAgICAgICAgfQogICAgICAgICAgCiAgICAgICAgICB3ZWIgPSBzb2Z0d2FyZVN5c3RlbSAiV2ViIiB7CiAgICAgICAgICAgIGRlc2NyaXB0aW9uICJEaXNwbGF5cyBjb250ZW50IGluIGEgdXNlciBmcmllbmRseSB3YXkiCiAgICAgICAgICAgIHRhZ3MgIkV4aXN0aW5nIFN5c3RlbSIKICAgICAgICAgIH0KICAgICAgfQogICAgICAKICAgICAgCiAgICAgIHRheFJldHVyblBvcnRhbCA9IHNvZnR3YXJlU3lzdGVtICJUYXggUmV0dXJuIFBvcnRhbCIgIkVuYWJsZXMgdXNlcnMgdG8gZmlsZSB0aGVpciB0YXggcmV0dXJucyBvbmxpbmUiIHsKICAgICAgICAgIHRheFJldHVybkFwcGxpY2F0aW9uID0gY29udGFpbmVyICJUYXggUmV0dXJuIEFwcGxpY2F0aW9uIiB7CiAgICAgICAgICAgICAgZGVzY3JpcHRpb24gIkNvb3JkaW5hdGVzIHRheCByZXR1cm4gcHJvY2Vzc2VzIgogICAgICAgICAgICAgIHRlY2hub2xvZ3kgIlJlYWN0IgogICAgICAgICAgfQogICAgICAKICAgICAgICAgIHNrYXR0dXJBcGkgPSBjb250YWluZXIgIlNrYXR0dXIgQVBJIiB7CiAgICAgICAgICAgICAgZGVzY3JpcHRpb24gIlByb3ZpZGVzIHRheCByZXR1cm4gZGF0YSIKICAgICAgICAgICAgICB0ZWNobm9sb2d5ICJFeHByZXNzLmpzIgogICAgICAgICAgfQogICAgICAKICAgICAgICAgIHNrYXR0dXJEYiA9IGNvbnRhaW5lciAiU2thdHR1ciBEQiIgewogICAgICAgICAgICAgIGRlc2NyaXB0aW9uICJEYXRhYmFzZSBmb3IgdGF4IHJldHVybiBkYXRhIgogICAgICAgICAgICAgIHRlY2hub2xvZ3kgIlBvc3RncmVTUUwiCiAgICAgICAgICAgICAgdGFncyAiRGF0YWJhc2UiCiAgICAgICAgICB9CiAgICAgIH0KICAgICAgCiAgICAgIAogICAgICB0aGpvZHNrcmEgPSBzb2Z0d2FyZVN5c3RlbSAiw55qw7PDsHNrcsOhIiAiSWNlbGFuZCBOYXRpb25hbCBSZWdpc3RyeSIgIkV4aXN0aW5nIFN5c3RlbSIgewogICAgICAgICAgdGhqb2Rza3JhX2FwaSA9IGNvbnRhaW5lciAiw55qw7PDsHNrcsOhIEFQSSIgIkVpbnN0YWtsaW5nYXIgQVBJIMOeasOzw7Bza3LDoXIuIgogICAgICAgICAgdGhqb2Rza3JhX3hyb2FkID0gY29udGFpbmVyICLDnmrDs8Owc2tyw6EgWC1Sb2FkIiAiWC1Sb2FkIMO2cnlnZ2lzw75qw7NubiDDnmrDs8Owc2tyw6FyLiIgIlgtUm9hZCIKICAgICAgfQogICAgICAKICAgICAgCiAgICAgIHRheFBheWVyIC0+IHRheFJldHVyblBvcnRhbCAiVmlld3MgYW5kIHN1Ym1pdHMgdGF4IHJldHVybnMiCiAgICAgIAogICAgICB0YXhSZXR1cm5Qb3J0YWwgLT4gaWFzICJBdXRoZW50aWNhdGVzIHVzZXJzIgogICAgICB0YXhSZXR1cm5Qb3J0YWwgLT4gYXBwbGljYXRpb25TeXN0ZW0gIkNvb3JkaW5hdGVzIHRheCByZXR1cm4gcHJvY2VzcyIKICAgICAgdGF4UmV0dXJuUG9ydGFsIC0+IHdlYiAiUHJvdmlkZXMgaW5mb3JtYXRpb24gYWJvdXQgdGF4IHJldHVybnMiCiAgICAgIHRheFJldHVyblBvcnRhbCAtPiBzZXJ2aWNlUG9ydGFsICJQcm92aWRlcyB1c2VycyB0YXggcmV0dXJuIGluZm9ybWF0aW9uIgogICAgICAKICAgICAgdGF4UmV0dXJuUG9ydGFsIC0+IHRoam9kc2tyYSAiUHJvdmlkZXMgdXNlciBpbmZvcm1hdGlvbiIKICAgICAgCiAgICAgIAogICAgICB0YXhQYXllciAtPiB0YXhSZXR1cm5BcHBsaWNhdGlvbiAiVmlld3MgYW5kIHN1Ym1pdHMgdGF4IHJldHVybiIKICAgICAgCiAgICAgIHRheFJldHVybkFwcGxpY2F0aW9uIC0+IHRoam9kc2tyYV9hcGkgIlByb3ZpZGVzIHVzZXIgaW5mb3JtYXRpb24iCiAgICAgIHRheFJldHVybkFwcGxpY2F0aW9uIC0+IHNrYXR0dXJBcGkgIlN1Ym1pdHMgdGF4IHJldHVybiBkYXRhIgogICAgICAKICAgICAgc2thdHR1ckFwaSAtPiBza2F0dHVyRGIgIlN0b3JlcyB0YXggcmV0dXJuIGRhdGEiCiAgfQoKICB2aWV3cyB7CiAgICBzeXN0ZW1Db250ZXh0IHRheFJldHVyblBvcnRhbCB7CiAgICAgIGluY2x1ZGUgKgogICAgICBhdXRvbGF5b3V0IGxyCiAgICAgIGRlc2NyaXB0aW9uICJTeXN0ZW0gY29udGV4dCBmb3IgdGF4IHJldHVybiBwb3J0YWwiCiAgICB9CgogICAgY29udGFpbmVyIHRheFJldHVyblBvcnRhbCB7CiAgICAgIGluY2x1ZGUgKgogICAgICBpbmNsdWRlIHRoam9kc2tyYV9hcGkKICAgICAgYXV0b2xheW91dCBscgogICAgICBkZXNjcmlwdGlvbiAiQ29udGFpbmVyIGRpYWdyYW0gZm9yIHRheCByZXR1cm4gcG9ydGFsIgogICAgfQoKICAgIHN0eWxlcyB7CiAgICAgIGVsZW1lbnQgIlNvZnR3YXJlIFN5c3RlbSIgewogICAgICAgICAgYmFja2dyb3VuZCAjMTE2OGJkCiAgICAgICAgICBjb2xvciAjZmZmZmZmCiAgICAgIH0KICAgICAgZWxlbWVudCAiRXhpc3RpbmcgU3lzdGVtIiB7CiAgICAgICAgICBiYWNrZ3JvdW5kICNlYmVjZjAKICAgICAgICAgIGNvbG9yICMwMDAwMDAKICAgICAgfQogICAgICBlbGVtZW50ICJQZXJzb24iIHsKICAgICAgICAgIHNoYXBlIHBlcnNvbgogICAgICAgICAgYmFja2dyb3VuZCAjMDg0MjdiCiAgICAgICAgICBjb2xvciAjZmZmZmZmCiAgICAgIH0KICAgICAgZWxlbWVudCAiQ29udGFpbmVyIiB7CiAgICAgICAgICBiYWNrZ3JvdW5kICM0MzhkZDUKICAgICAgICAgIGNvbG9yICNmZmZmZmYKICAgICAgfQogICAgICBlbGVtZW50ICJXZWIgQnJvd3NlciIgewogICAgICAgICAgc2hhcGUgV2ViQnJvd3NlcgogICAgICB9CiAgICAgIGVsZW1lbnQgIkRhdGFiYXNlIiB7CiAgICAgICAgICBzaGFwZSBDeWxpbmRlcgogICAgICB9CiAgICAgIGVsZW1lbnQgIkNvbXBvbmVudCIgewogICAgICAgICAgYmFja2dyb3VuZCAjODViYmYwCiAgICAgICAgICBjb2xvciAjMDAwMDAwCiAgICAgIH0KICAgICAgZWxlbWVudCAiRmFpbG92ZXIiIHsKICAgICAgICAgIG9wYWNpdHkgMjUKICAgICAgfQogICAgfQogIH0KfQ=="
   },
   "views" : {
     "configuration" : {
       "branding" : { },
-      "lastSavedView" : "SystemContext-001",
+      "lastSavedView" : "Container-001",
       "metadataSymbols" : "SquareBrackets",
       "styles" : {
         "elements" : [ {
@@ -314,54 +276,48 @@
       },
       "description" : "Container diagram for tax return portal",
       "dimensions" : {
-        "height" : 2066,
-        "width" : 2370
+        "height" : 1350,
+        "width" : 3070
       },
       "elements" : [ {
         "id" : "1",
-        "x" : 225,
+        "x" : 200,
         "y" : 151
       }, {
-        "id" : "3",
-        "x" : 200,
-        "y" : 851
-      }, {
         "id" : "8",
-        "x" : 950,
-        "y" : 226
+        "x" : 900,
+        "y" : 201
       }, {
         "id" : "9",
-        "x" : 950,
-        "y" : 826
+        "x" : 1650,
+        "y" : 201
       }, {
         "id" : "10",
-        "x" : 1700,
-        "y" : 826
+        "x" : 2400,
+        "y" : 201
       }, {
-        "id" : "12",
-        "x" : 950,
-        "y" : 1426
+        "id" : "11",
+        "x" : 1650,
+        "y" : 801
       } ],
       "externalSoftwareSystemBoundariesVisible" : false,
       "generatedKey" : true,
       "key" : "Container-001",
       "order" : 2,
       "relationships" : [ {
-        "id" : "19"
+        "id" : "20"
       }, {
-        "id" : "21"
+        "id" : "22"
+      }, {
+        "id" : "24"
       }, {
         "id" : "25"
-      }, {
-        "id" : "29"
-      }, {
-        "id" : "31"
       } ],
       "softwareSystemId" : "7"
     } ],
     "systemContextViews" : [ {
       "automaticLayout" : {
-        "applied" : true,
+        "applied" : false,
         "edgeSeparation" : 0,
         "implementation" : "Graphviz",
         "nodeSeparation" : 300,
@@ -370,34 +326,34 @@
         "vertices" : false
       },
       "description" : "System context for tax return portal",
-      "dimensions" : {
-        "height" : 2594,
-        "width" : 2320
-      },
       "elements" : [ {
         "id" : "1",
-        "x" : 199,
-        "y" : 721
+        "x" : 0,
+        "y" : 0
       }, {
         "id" : "2",
-        "x" : 1649,
-        "y" : 171
+        "x" : 0,
+        "y" : 0
       }, {
         "id" : "3",
-        "x" : 1649,
-        "y" : 771
+        "x" : 0,
+        "y" : 0
       }, {
         "id" : "5",
-        "x" : 1649,
-        "y" : 1371
+        "x" : 0,
+        "y" : 0
       }, {
         "id" : "6",
-        "x" : 1649,
-        "y" : 1971
+        "x" : 0,
+        "y" : 0
       }, {
         "id" : "7",
-        "x" : 899,
-        "y" : 771
+        "x" : 0,
+        "y" : 0
+      }, {
+        "id" : "11",
+        "x" : 0,
+        "y" : 0
       } ],
       "enterpriseBoundaryVisible" : true,
       "generatedKey" : true,
@@ -410,23 +366,11 @@
       }, {
         "id" : "16"
       }, {
-        "id" : "17",
-        "vertices" : [ {
-          "x" : 1545,
-          "y" : 1821
-        } ]
+        "id" : "17"
       }, {
-        "id" : "18",
-        "vertices" : [ {
-          "x" : 1499,
-          "y" : 1071
-        } ]
+        "id" : "18"
       }, {
-        "id" : "26",
-        "vertices" : [ {
-          "x" : 1499,
-          "y" : 771
-        } ]
+        "id" : "19"
       } ],
       "softwareSystemId" : "7"
     } ]
