@@ -1,5 +1,5 @@
 {
-  "name": "@./source",
+  "name": "utbod-skatturinn-2025",
   "version": "1.0.0",
   "license": "MIT",
   "scripts": {
@@ -7,9 +7,7 @@
     "skattur_db": "docker compose up -d skattur_db",
     "national_registry_db": "docker compose up -d national_registry_db",
     "docker_down": "docker compose down",
-    "all": "docker compose up -d",
-    "seed:national-registry": "yarn workspace national-registry seed",
-    "start:national-registry": "yarn workspace national-registry start"
+    "all": "docker compose up -d"
   },
   "private": true,
   "dependencies": {
