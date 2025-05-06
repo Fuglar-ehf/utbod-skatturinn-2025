@@ -1,9 +1,7 @@
 
 taxPayer -> taxReturnApplication "Views and submits tax return"
 
-taxReturnApplication -> servicePortalApi "Provides tax return information"
-
-servicePortalApi -> skatturApi "Provides tax return data"
-servicePortalApi -> thjodskra_api "Provides user information"
+taxReturnApplication -> thjodskra_api "Provides user information"
+taxReturnApplication -> skatturApi "Submits tax return data"
 
 skatturApi -> skatturDb "Stores tax return data"
