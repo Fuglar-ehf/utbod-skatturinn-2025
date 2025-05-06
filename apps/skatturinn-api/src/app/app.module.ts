@@ -6,6 +6,13 @@ import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { RevenueController } from './revenue/revenue.controller';
 import { RevenueService } from './revenue/revenue.service';
+import { TaxReturn } from '../models/taxreturn.model';
+import { Income } from '../models/income.model';
+import { Cars } from '../models/cars.model';
+import { Realestates } from '../models/realestates.modle';
+import { Mortgages } from '../models/mortgages.model';
+import { OtherLoans } from '../models/otherloans.model';
+import { Benefits } from '../models/benefits.model';
 
 @Module({
   imports: [
@@ -19,7 +26,15 @@ import { RevenueService } from './revenue/revenue.service';
       database: process.env.SKATTUR_DB_NAME || 'skatturinn_db',
       autoLoadModels: true,
       synchronize: false,
-      models: [],
+      models: [
+        TaxReturn,
+        Income,
+        Cars,
+        Realestates,
+        Mortgages,
+        OtherLoans,
+        Benefits,
+      ],
     }),
   ],
   controllers: [AppController, RevenueController],

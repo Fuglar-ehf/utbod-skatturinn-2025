@@ -2,39 +2,41 @@
 
 module.exports = {
   async up(queryInterface, Sequelize) {
-    await queryInterface.createTable('TaxReturnFieldGroup', {
-      field_group_Id: {
+    await queryInterface.createTable('OtherLoans', {
+      id: {
         type: Sequelize.INTEGER,
         autoIncrement: true,
         primaryKey: true,
       },
-      group_id: {
+      taxreturn_id: {
         type: Sequelize.INTEGER,
         allowNull: false,
+        references: {
+          model: 'TaxReturn',
+          key: 'id',
+        },
+        onDelete: 'CASCADE',
       },
-      description: {
+      loan_description: {
         type: Sequelize.STRING,
       },
-      mapping_from_application_system: {
+      loan_provider_national_id: {
         type: Sequelize.STRING,
+      },
+      interest: {
+        type: Sequelize.INTEGER,
+      },
+      remaining: {
+        type: Sequelize.INTEGER,
       },
       created_at: {
         type: Sequelize.DATE,
         defaultValue: Sequelize.fn('now'),
       },
     });
-
-    await queryInterface.addConstraint('TaxReturnFieldGroup', {
-      fields: ['group_id'],
-      type: 'foreign key',
-      references: {
-        table: 'TaxReturnGroup',
-        field: 'group_id',
-      },
-    });
   },
 
   async down(queryInterface) {
-    await queryInterface.dropTable('TaxReturnFieldGroup');
-  }
+    await queryInterface.dropTable('OtherLoans');
+  },
 };
