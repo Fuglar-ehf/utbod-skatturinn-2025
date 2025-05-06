@@ -14,7 +14,8 @@
     "xml2js": "^0.6.2"
   },
   "scripts": {
-    "build": "nest build && xcopy assets ..\\..\\dist\\apps\\national-registry\\assets\\ /E /I /Y",
+    "build": "node ../../node_modules/@nestjs/cli/bin/nest.js build --config tsconfig.app.json",
+    "postbuild": "node -e \"require('os').platform() === 'win32' ? require('child_process').execSync('xcopy assets ..\\\\..\\\\dist\\\\apps\\\\national-registry\\\\assets\\\\ /E /I /Y', { stdio: 'inherit' }) : require('child_process').execSync('cp -r assets ../../dist/apps/national-registry/assets/', { stdio: 'inherit' })\"",
     "start": "ts-node -r tsconfig-paths/register src/main.ts",
     "start:dev": "nest start --watch",
     "seed": "ts-node -r tsconfig-paths/register src/seed.ts"
