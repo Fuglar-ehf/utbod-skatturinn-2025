@@ -3,6 +3,8 @@ import { SequelizeModule } from '@nestjs/sequelize';
 import { ConfigModule } from '@nestjs/config';
 import { Person } from '../models/person.model';
 import { SeedService } from '../seed/seed.service';
+import { NationalRegistryService } from './national-registry.service';
+import { NationalRegistryController } from './national-registry.controller';
 
 @Module({
   imports: [
@@ -21,6 +23,7 @@ import { SeedService } from '../seed/seed.service';
     }),
     SequelizeModule.forFeature([Person]),
   ],
-  providers: [SeedService],
+  providers: [SeedService, NationalRegistryService],
+  controllers: [NationalRegistryController],
 })
 export class AppModule {}
