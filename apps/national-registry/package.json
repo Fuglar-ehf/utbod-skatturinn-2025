@@ -8,6 +8,18 @@
     "pg": "^8.15.6",
     "pg-hstore": "^2.3.4",
     "sequelize": "^6.37.7",
-    "sequelize-typescript": "^2.1.6"
+    "sequelize-typescript": "^2.1.6",
+    "xml2js": "^0.6.2"
+  },
+  "scripts": {
+    "build": "nest build",
+    "start": "ts-node -r tsconfig-paths/register src/main.ts",
+    "start:dev": "nest start --watch"
+  },
+  "devDependencies": {
+    "@types/xml2js": "^0.4.14",
+    "ts-node": "^10.9.2",
+    "tsconfig-paths": "^4.2.0",
+    "typescript": "^5.8.3"
   }
 }

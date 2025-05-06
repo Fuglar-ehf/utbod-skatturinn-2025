@@ -7,7 +7,8 @@
     "skattur_db": "docker compose up -d skattur_db",
     "national_registry_db": "docker compose up -d national_registry_db",
     "docker_down": "docker compose down",
-    "all": "docker compose up -d"
+    "all": "docker compose up -d",
+    "seed:national-registry": "yarn workspace national-registry start"
   },
   "private": true,
   "dependencies": {
