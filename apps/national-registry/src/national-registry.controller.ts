@@ -1,7 +1,9 @@
 import { Controller, Get, Param, NotFoundException } from '@nestjs/common';
+import { ApiTags } from '@nestjs/swagger';
 import { NationalRegistryService } from './national-registry.service';
 import { Person } from './models/person.model';
 
+@ApiTags('People')
 @Controller('people')
 export class NationalRegistryController {
   constructor(

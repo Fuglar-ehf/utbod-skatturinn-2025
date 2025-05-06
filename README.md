@@ -16,3 +16,4 @@ Mock bakendaþjónusta fyrir Skattinn
 - **CI Provider**: GitHub Actions
 - **ORM**: Sequelize
 - **Database**: PostgreSQL
+- **API documentation**: Swagger 
