@@ -23,15 +23,11 @@ export class Person extends Model<Person> {
 
   @ApiProperty()
   @Column(DataType.STRING)
-  gender!: string; // Kyn
-
-  @ApiProperty()
-  @Column(DataType.DATEONLY)
-  birth_date!: Date; // Fæðingardagur
+  nominative_case_address!: string; // HeimiliNefnifall
 
   @ApiProperty()
   @Column(DataType.STRING)
-  address!: string; // Heimilisfang
+  dative_case_address!: string; // HeimiliThagufall
 
   @ApiProperty()
   @Column(DataType.STRING)
@@ -39,11 +35,15 @@ export class Person extends Model<Person> {
 
   @ApiProperty()
   @Column(DataType.STRING)
-  municipality!: string; // Sveitarfelag
+  gender!: string; // Kyn
+
+  @ApiProperty()
+  @Column(DataType.DATEONLY)
+  birth_date!: Date; // FaedD
 
   @ApiProperty()
   @Column(DataType.STRING)
-  nationality!: string; // Rikisfang
+  family_id!: string; // Fjölskyldunúmer
 
   @ApiProperty()
   @Column(DataType.STRING)
@@ -51,9 +51,5 @@ export class Person extends Model<Person> {
 
   @ApiProperty()
   @Column(DataType.STRING)
-  spouse_national_id!: string | null; // MakiKennitala
-
-  @ApiProperty()
-  @Column(DataType.STRING)
-  status!: string; // Stada
+  nationality!: string; // Rikisfang
 }

@@ -36,15 +36,14 @@ export class SeedService {
       await this.personModel.upsert({
         national_id: asText(person.Kennitala),
         name: asText(person.Nafn),
+        nominative_case_address: asText(person.HeimiliNefnifall),
+        dative_case_address: asText(person.HeimiliThagufall),
+        postal_code: asText(person.PostNr),
         gender: asText(person.Kyn),
-        birth_date: person.Fæðingardagur,
-        address: asText(person.Heimilisfang),
-        postal_code: asText(person.Postnumer),
-        municipality: asText(person.Sveitarfelag),
+        birth_date: person.FaedD ? new Date(person.FaedD) : null,
+        family_id: asText(person.FjolskylduNumer),
+        marital_status: asText(person.Hjuskapastada),
         nationality: asText(person.Rikisfang),
-        marital_status: asText(person.Hjúskaparstaða),
-        spouse_national_id: asText(person.MakiKennitala),
-        status: asText(person.Stada),
       } as any);
     }
 
