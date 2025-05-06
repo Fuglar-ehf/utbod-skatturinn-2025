@@ -9,5 +9,9 @@
     {
       "path": "./apps/skatturinn-api"
     }
-  ]
+  ],
+  "compilerOptions": {
+    "baseUrl": "./",
+    "paths": {}
+  }
 }
