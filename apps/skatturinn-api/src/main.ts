@@ -1,7 +1,9 @@
 import { Logger } from '@nestjs/common';
 import { NestFactory } from '@nestjs/core';
+import { DocumentBuilder, SwaggerModule } from '@nestjs/swagger';
+import { writeFileSync } from 'fs';
+
 import { AppModule } from './app/app.module';
-import { SwaggerModule, DocumentBuilder } from '@nestjs/swagger';
 
 async function bootstrap() {
   const app = await NestFactory.create(AppModule);
@@ -18,7 +20,12 @@ async function bootstrap() {
   const document = SwaggerModule.createDocument(app, config);
   SwaggerModule.setup(`${globalPrefix}/docs`, app, document);
 
-  const port = process.env.PORT || 3000;
+  writeFileSync(
+    'apps/skatturinn-api/src/openapi.json',
+    JSON.stringify(document, null, 2)
+  );
+
+  const port = 3001;
   await app.listen(port);
   Logger.log(
     `🚀 Application is running on: http://localhost:${port}/${globalPrefix}`
