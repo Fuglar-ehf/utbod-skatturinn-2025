@@ -82,15 +82,23 @@ export class CreateOtherLoanDto {
   remaining!: number;
 }
 
-export class CreateBenefitDto {
-  @ApiProperty()
-  from?: string;
-
+export class CreateAllowanceDto {
   @ApiProperty()
   amount!: number;
 
   @ApiProperty()
-  name!: string;
+  type_of_allowance!: string;
+}
+
+export class CreateBenefitDto {
+  @ApiProperty()
+  payer_national_id?: string;
+
+  @ApiProperty()
+  payer_name?: string;
+
+  @ApiProperty()
+  amount!: number;
 
   @ApiProperty()
   type_of_benefit!: string;
@@ -117,6 +125,9 @@ export class CreateTaxReturnDataDto {
 
   @ApiProperty({ type: [CreateOtherLoanDto] })
   otherLoans!: CreateOtherLoanDto[];
+
+  @ApiProperty({ type: [CreateAllowanceDto] })
+  allowances?: CreateAllowanceDto[];
 
   @ApiProperty({ type: [CreateBenefitDto] })
   benefits!: CreateBenefitDto[];

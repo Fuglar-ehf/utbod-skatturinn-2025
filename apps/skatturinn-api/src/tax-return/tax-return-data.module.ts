@@ -9,6 +9,7 @@ import { Realestates } from '../models/realestates.model';
 import { Mortgages } from '../models/mortgages.model';
 import { OtherLoans } from '../models/otherloans.model';
 import { Benefits } from '../models/benefits.model';
+import { Allowances } from '../models/allowances.model';
 
 @Module({
   imports: [
@@ -19,6 +20,7 @@ import { Benefits } from '../models/benefits.model';
       Realestates,
       Mortgages,
       OtherLoans,
+      Allowances,
       Benefits,
     ]),
   ],

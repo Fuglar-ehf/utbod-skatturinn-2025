@@ -9,6 +9,7 @@ import { Realestates } from '../models/realestates.model';
 import { Mortgages } from '../models/mortgages.model';
 import { OtherLoans } from '../models/otherloans.model';
 import { Benefits } from '../models/benefits.model';
+import { Allowances } from '../models/allowances.model';
 
 @Injectable()
 export class TaxReturnDataService {
@@ -22,6 +23,8 @@ export class TaxReturnDataService {
     @InjectModel(OtherLoans)
     private readonly otherLoansModel: typeof OtherLoans,
     @InjectModel(Benefits) private readonly benefitsModel: typeof Benefits,
+    @InjectModel(Allowances)
+    private readonly allowancesModel: typeof Allowances,
     @Inject(Sequelize) private readonly sequelize: Sequelize
   ) {}
 
@@ -80,12 +83,18 @@ export class TaxReturnDataService {
             { transaction }
           )
         ),
-        ...createTaxReturnDataDto.benefits.map((benefit) =>
+        ...(createTaxReturnDataDto.benefits?.map((benefit) =>
           this.benefitsModel.create(
             { ...benefit, taxreturn_id: taxReturn.id },
             { transaction }
           )
-        ),
+        ) ?? []),
+        ...(createTaxReturnDataDto.allowances?.map((allowance) =>
+          this.allowancesModel.create(
+            { ...allowance, taxreturn_id: taxReturn.id },
+            { transaction }
+          )
+        ) ?? []),
       ]);
 
       await transaction.commit();
