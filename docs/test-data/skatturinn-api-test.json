@@ -1,0 +1,88 @@
+{
+  "nationalid": "0102851439",
+  "year": "2025",
+  "income": [
+    {
+      "employer_national_id": "1111111111",
+      "employer": "Norðurljós Software ehf",
+      "income": 9360000
+    },
+    {
+      "employer_national_id": "2222222222",
+      "employer": "Mús & Merki ehf.",
+      "income": 900000
+    }
+  ],
+  "cars": [
+    {
+      "year_bought": 2021,
+      "registration_number": "KB-521",
+      "amount": 3100000
+    },
+    {
+      "year_bought": 2012,
+      "registration_number": "JU-329",
+      "amount": 430000
+    }
+  ],
+  "realestates": [
+    {
+      "address": "Bláfjallagata 12",
+      "registration_number": "210-9876",
+      "realastate_value": 52000000
+    }
+  ],
+  "mortgages": [
+    {
+      "year_bought": 2021,
+      "date": "2020-01-01",
+      "amount": 20000000,
+      "address": "Bláfjallagata 12",
+      "loan_id": "56783900123",
+      "period_of_loan": 30,
+      "loan_provider": "Íslandsbanki hf.",
+      "loan_provider_national_id": "4910080160",
+      "principal": 1360000,
+      "interest": 920000,
+      "remaining": 28540000
+    }
+  ],
+  "otherLoans": [
+    {
+      "loan_description": "Student Loan",
+      "loan_provider_national_id": "1234567890",
+      "interest": 5000,
+      "remaining": 1500000
+    }
+  ],
+  "allowances": [
+    {
+      "amount": 25000,
+      "type_of_allowance": "Frítekjumark"
+    },
+    {
+      "amount": 45000,
+      "type_of_allowance": "Þjónustugjaldsstyrkur"
+    }
+  ],
+  "benefits": [
+    {
+      "payer_national_id": "1111111111",
+      "payer_name": "Norðurljós Software ehf",
+      "amount": 120000,
+      "type_of_benefit": "Ökutækjastyrkur. Dagpeningar. Hlunnindi"
+    },
+    {
+      "payer_national_id": "2222222222",
+      "payer_name": "Norðurljós Software ehf",
+      "amount": 75000,
+      "type_of_benefit": "Lífeyrisgreiðslur. Greiðslur frá Tryggingastofnun. Aðrar bótagreiðslur, styrkir o.fl."
+    },
+    {
+      "payer_national_id": "3333333333",
+      "payer_name": "VR",
+      "amount": 130000,
+      "type_of_benefit": "Lífeyrisgreiðslur. Greiðslur frá Tryggingastofnun. Aðrar bótagreiðslur, styrkir o.fl."
+    }
+  ]
+}
