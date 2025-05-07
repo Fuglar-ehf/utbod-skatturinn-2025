@@ -1,7 +1,8 @@
-import { Controller, Get, Param, NotFoundException } from '@nestjs/common';
-import { ApiTags } from '@nestjs/swagger';
-import { NationalRegistryService } from './national-registry.service';
+import { Controller, Get, NotFoundException, Param } from '@nestjs/common';
+import { ApiOkResponse, ApiTags } from '@nestjs/swagger';
+
 import { Person } from '../models/person.model';
+import { NationalRegistryService } from './national-registry.service';
 
 @ApiTags('People')
 @Controller('people')
@@ -11,6 +12,7 @@ export class NationalRegistryController {
   ) {}
 
   @Get(':national_id')
+  @ApiOkResponse({ type: Person })
   async getByNationalId(
     @Param('national_id') national_id: string
   ): Promise<Person> {
