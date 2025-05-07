@@ -1,2 +1,2 @@
-GET http://localhost:3000/people/1811921519
+GET http://localhost:3030/national-registry/people/1811921519
 Accept: application/json

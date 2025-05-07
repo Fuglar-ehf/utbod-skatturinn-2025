@@ -1,0 +1,29 @@
+{
+  "name": "skatturinn-api",
+  "sourceRoot": "apps/skatturinn-api/src",
+  "projectType": "application",
+  "targets": {
+    "build": {
+      "executor": "@nx/js:tsc",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/apps/skatturinn-api/api",
+        "main": "apps/skatturinn-api/src/main.ts",
+        "tsConfig": "apps/skatturinn-api/tsconfig.app.json"
+      }
+    },
+    "serve": {
+      "executor": "@nx/js:node",
+      "options": {
+        "buildTarget": "skatturinn-api:build"
+      }
+    },
+    "dev-services": {
+      "executor": "nx:run-commands",
+      "options": {
+        "commands": ["docker compose up -d skattur_db"],
+        "cwd": "apps/skatturinn-api"
+      }
+    }
+  }
+}
