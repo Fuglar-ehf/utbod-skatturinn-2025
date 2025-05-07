@@ -171,26 +171,41 @@
           "remaining"
         ]
       },
+      "CreateAllowanceDto": {
+        "type": "object",
+        "properties": {
+          "amount": {
+            "type": "number"
+          },
+          "type_of_allowance": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "amount",
+          "type_of_allowance"
+        ]
+      },
       "CreateBenefitDto": {
         "type": "object",
         "properties": {
-          "from": {
+          "payer_national_id": {
+            "type": "string"
+          },
+          "payer_name": {
             "type": "string"
           },
           "amount": {
             "type": "number"
-          },
-          "name": {
-            "type": "string"
           },
           "type_of_benefit": {
             "type": "string"
           }
         },
         "required": [
-          "from",
+          "payer_national_id",
+          "payer_name",
           "amount",
-          "name",
           "type_of_benefit"
         ]
       },
@@ -233,6 +248,12 @@
               "$ref": "#/components/schemas/CreateOtherLoanDto"
             }
           },
+          "allowances": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/CreateAllowanceDto"
+            }
+          },
           "benefits": {
             "type": "array",
             "items": {
@@ -248,6 +269,7 @@
           "realestates",
           "mortgages",
           "otherLoans",
+          "allowances",
           "benefits"
         ]
       }
