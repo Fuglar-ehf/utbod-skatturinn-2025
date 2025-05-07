@@ -15,7 +15,9 @@
     "undo:migrations:skatturinn": "npx sequelize-cli db:migrate:undo:all --config apps/skatturinn-api/config/config.js --migrations-path apps/skatturinn-api/src/migrations --models-path apps/skatturinn-api/src/models",
     "undo:seed:skatturinn": "npx sequelize-cli db:seed:undo:all --config apps/skatturinn-api/config/config.js --seeders-path apps/skatturinn-api/src/seeders --models-path apps/skatturinn-api/src/models",
     "undo:migrations:national-registry": "npx sequelize-cli db:migrate:undo:all --config apps/national-registry/config/config.js --migrations-path apps/national-registry/src/migrations --models-path apps/national-registry/src/models",
-    "undo:seed:national-registry": "npx sequelize-cli db:seed:undo:all --config apps/national-registry/config/config.js --seeders-path apps/national-registry/src/seeders --models-path apps/national-registry/src/models"
+    "undo:seed:national-registry": "npx sequelize-cli db:seed:undo:all --config apps/national-registry/config/config.js --seeders-path apps/national-registry/src/seeders --models-path apps/national-registry/src/models",
+    "dev-services": "nx dev-services",
+    "start": "nx serve"
   },
   "private": true,
   "dependencies": {

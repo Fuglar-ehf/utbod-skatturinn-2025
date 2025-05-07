@@ -23,3 +23,8 @@ web = softwareSystem "Web" {
   description "Displays content in a user friendly way"
   tags "Existing System"
 }
+
+xroad = softwareSystem "island.is X-Road Security Server" {
+  description "Provides secure data exchange between systems"
+  tags "Existing System"
+}

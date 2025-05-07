@@ -7,13 +7,15 @@ workspace {
   views {
     systemContext taxReturnPortal {
       include *
+      exclude xroad
       autolayout lr
       description "System context for tax return portal"
     }
 
     container taxReturnPortal {
       include *
-      include thjodskra_api
+      include thjodskraApi
+      include thjodskraXRoad
       autolayout lr
       description "Container diagram for tax return portal"
     }
