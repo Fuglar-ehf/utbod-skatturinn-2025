@@ -21,7 +21,7 @@ This project is an Nx integrated monorepo containing two main backend services:
 * **TypeScript**: For strong typing and maintainable code.
 * **Jest**: For testing.
 * **ESLint and Prettier**: For code quality and formatting.
-* **OpenAPI**: Swagger
+* **OpenAPI**: OpenAPI documentation using Swagger
 * **Versioning**: Controllers use NestJS versioning
 
 
