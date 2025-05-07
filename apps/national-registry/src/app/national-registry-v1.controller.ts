@@ -1,4 +1,10 @@
-import { Controller, Get, NotFoundException, Param } from '@nestjs/common';
+import {
+  Controller,
+  Get,
+  NotFoundException,
+  Param,
+  Version,
+} from '@nestjs/common';
 import { ApiOkResponse, ApiTags } from '@nestjs/swagger';
 
 import { Person } from '../models/person.model';
@@ -6,11 +12,12 @@ import { NationalRegistryService } from './national-registry.service';
 
 @ApiTags('People')
 @Controller('people')
-export class NationalRegistryController {
+export class NationalRegistryV1Controller {
   constructor(
     private readonly nationalRegistryService: NationalRegistryService
   ) {}
 
+  @Version('1')
   @Get(':national_id')
   @ApiOkResponse({ type: Person })
   async getByNationalId(

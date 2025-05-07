@@ -1,6 +1,6 @@
 import { Module } from '@nestjs/common';
 import { SequelizeModule } from '@nestjs/sequelize';
-import { TaxReturnDataController } from './tax-return-data.controller';
+import { TaxReturnDataV1Controller } from './tax-return-data-v1.controller';
 import { TaxReturnDataService } from './tax-return-data.service';
 import { TaxReturn } from '../models/taxreturn.model';
 import { Income } from '../models/income.model';
@@ -24,7 +24,7 @@ import { Allowances } from '../models/allowances.model';
       Benefits,
     ]),
   ],
-  controllers: [TaxReturnDataController],
+  controllers: [TaxReturnDataV1Controller],
   providers: [TaxReturnDataService],
 })
 export class TaxReturnDataModule {}

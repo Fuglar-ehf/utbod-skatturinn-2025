@@ -1,9 +1,9 @@
 {
   "openapi": "3.0.0",
   "paths": {
-    "/api/tax-return-data": {
+    "/api/v1/tax-return-data": {
       "post": {
-        "operationId": "TaxReturnDataController_createTaxReturnData",
+        "operationId": "TaxReturnDataV1Controller_createTaxReturnData_v1",
         "parameters": [],
         "requestBody": {
           "required": true,
