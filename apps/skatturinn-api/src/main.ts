@@ -24,8 +24,6 @@ async function bootstrap() {
     .setVersion('v1.0.0')
     .setContact('Fuglar ehf.', 'https://www.fuglar.com/', 'fuglar@fuglar.com')
     .addServer('http://localhost:[port]/api', 'Development server')
-    .addBearerAuth()
-    .addApiKey({ type: 'apiKey', name: 'apiKey', in: 'header' }, 'API Key')
     .addExtension('x-category', ['personal', 'official'])
     .addExtension('x-pricing', ['free'])
     .build();

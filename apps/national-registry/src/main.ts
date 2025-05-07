@@ -24,8 +24,6 @@ async function bootstrap() {
       'http://localhost:[port]/national-registry',
       'Development server'
     )
-    .addBearerAuth()
-    .addApiKey({ type: 'apiKey', name: 'apiKey', in: 'header' }, 'API Key')
     .addExtension('x-category', ['personal', 'official'])
     .addExtension('x-pricing', ['free'])
     .build();

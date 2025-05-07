@@ -50,18 +50,6 @@
     }
   ],
   "components": {
-    "securitySchemes": {
-      "bearer": {
-        "scheme": "bearer",
-        "bearerFormat": "JWT",
-        "type": "http"
-      },
-      "API Key": {
-        "type": "apiKey",
-        "in": "header",
-        "name": "apiKey"
-      }
-    },
     "schemas": {
       "CreateIncomeDto": {
         "type": "object",
