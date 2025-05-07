@@ -10,7 +10,9 @@
     "all": "docker compose up -d",
     "migrate:national_registry": "npx sequelize-cli db:migrate",
     "seed:national_registry": "yarn workspace national-registry seed",
-    "reset:national_registry": "npx sequelize-cli db:drop && npx sequelize-cli db:create && npx sequelize-cli db:migrate"
+    "reset:national_registry": "npx sequelize-cli db:drop && npx sequelize-cli db:create && npx sequelize-cli db:migrate",
+    "dev-services": "nx dev-services",
+    "start": "nx serve"
   },
   "private": true,
   "dependencies": {
