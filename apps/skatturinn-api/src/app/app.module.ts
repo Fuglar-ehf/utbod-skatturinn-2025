@@ -23,6 +23,7 @@ import { OtherLoansController } from '../otherloans/otherloans.controller';
 import { OtherLoansService } from '../otherloans/otherloans.service';
 import { BenefitsService } from '../benefits/benefits.service';
 import { BenefitsController } from '../benefits/benefits.controller';
+import { TaxReturnDataModule } from '../tax-return/tax-return-data.module';
 
 @Module({
   imports: [
@@ -54,6 +55,7 @@ import { BenefitsController } from '../benefits/benefits.controller';
       OtherLoans,
       Benefits,
     ]),
+    TaxReturnDataModule,
   ],
   controllers: [
     AppController,

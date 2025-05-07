@@ -10,7 +10,7 @@ import {
 import { TaxReturn } from './taxreturn.model';
 
 @Table({ tableName: 'Income', timestamps: false })
-export class Income extends Model<Income> {
+export class Income extends Model {
   @PrimaryKey
   @AutoIncrement
   @Column(DataType.INTEGER)
