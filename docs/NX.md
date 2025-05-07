@@ -1,4 +1,4 @@
-[Til baka í README](../README.md)
+[<<< README](../README.md)
 
 # 
 

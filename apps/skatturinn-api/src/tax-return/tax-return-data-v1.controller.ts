@@ -1,13 +1,14 @@
-import { Body, Controller, Post, HttpStatus } from '@nestjs/common';
+import { Body, Controller, Post, HttpStatus, Version } from '@nestjs/common';
 import { ApiTags, ApiOperation, ApiResponse } from '@nestjs/swagger';
 import { CreateTaxReturnDataDto } from './dto/create-tax-return-data.dto';
 import { TaxReturnDataService } from './tax-return-data.service';
 
 @ApiTags('Tax Return Data')
 @Controller('tax-return-data')
-export class TaxReturnDataController {
+export class TaxReturnDataV1Controller {
   constructor(private readonly taxReturnDataService: TaxReturnDataService) {}
 
+  @Version('1')
   @Post()
   @ApiOperation({
     summary:
