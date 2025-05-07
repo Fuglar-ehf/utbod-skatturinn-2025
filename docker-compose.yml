@@ -34,7 +34,7 @@ services:
       POSTGRES_USER: ${NATIONAL_REGISTRY_DB_USER}
       POSTGRES_PASSWORD: ${NATIONAL_REGISTRY_DB_PASSWORD}
     ports:
-      - "${NATIONAL_REGISTRY_DB_PORT}:5432"
+      - "${NATIONAL_REGISTRY_DB_PORT}:5433"
     volumes:
       - national_registry_data:/var/lib/postgresql/data
 
