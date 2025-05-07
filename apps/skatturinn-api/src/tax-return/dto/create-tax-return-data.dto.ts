@@ -2,9 +2,6 @@ import { ApiProperty } from '@nestjs/swagger';
 
 export class CreateIncomeDto {
   @ApiProperty()
-  taxreturn_id!: number;
-
-  @ApiProperty()
   employer_national_id!: string;
 
   @ApiProperty()
@@ -15,9 +12,6 @@ export class CreateIncomeDto {
 }
 
 export class CreateCarDto {
-  @ApiProperty()
-  taxreturn_id!: number;
-
   @ApiProperty()
   year_bought!: number;
 
@@ -30,9 +24,6 @@ export class CreateCarDto {
 
 export class CreateRealestateDto {
   @ApiProperty()
-  taxreturn_id!: number;
-
-  @ApiProperty()
   address!: string;
 
   @ApiProperty()
@@ -43,9 +34,6 @@ export class CreateRealestateDto {
 }
 
 export class CreateMortgageDto {
-  @ApiProperty()
-  taxreturn_id!: number;
-
   @ApiProperty()
   year_bought!: number;
 
@@ -80,10 +68,21 @@ export class CreateMortgageDto {
   remaining!: number;
 }
 
-export class CreateBenefitDto {
+export class CreateOtherLoanDto {
   @ApiProperty()
-  taxreturn_id!: number;
+  loan_description!: string;
 
+  @ApiProperty()
+  loan_provider_national_id!: string;
+
+  @ApiProperty()
+  interest!: number;
+
+  @ApiProperty()
+  remaining!: number;
+}
+
+export class CreateBenefitDto {
   @ApiProperty()
   from?: string;
 
@@ -98,6 +97,12 @@ export class CreateBenefitDto {
 }
 
 export class CreateTaxReturnDataDto {
+  @ApiProperty()
+  nationalid!: string;
+
+  @ApiProperty()
+  year!: string;
+
   @ApiProperty({ type: [CreateIncomeDto] })
   income!: CreateIncomeDto[];
 
@@ -109,6 +114,9 @@ export class CreateTaxReturnDataDto {
 
   @ApiProperty({ type: [CreateMortgageDto] })
   mortgages!: CreateMortgageDto[];
+
+  @ApiProperty({ type: [CreateOtherLoanDto] })
+  otherLoans!: CreateOtherLoanDto[];
 
   @ApiProperty({ type: [CreateBenefitDto] })
   benefits!: CreateBenefitDto[];

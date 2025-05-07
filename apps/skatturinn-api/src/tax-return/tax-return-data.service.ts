@@ -29,70 +29,60 @@ export class TaxReturnDataService {
     const transaction = await this.sequelize.transaction();
 
     try {
-      const taxReturn = await this.taxReturnModel.create({}, { transaction });
+      const { nationalid, year } = createTaxReturnDataDto;
 
+      // Check if tax return exists for this nationalid and year
+      let taxReturn = await this.taxReturnModel.findOne({
+        where: { nationalId: nationalid, year: parseInt(year) },
+        transaction,
+      });
+
+      // If not found, create a new TaxReturn
+      if (!taxReturn) {
+        taxReturn = await this.taxReturnModel.create(
+          {
+            nationalId: nationalid,
+            year: parseInt(year),
+          },
+          { transaction }
+        );
+      }
+
+      // Use the taxreturn_id for related entries
       await Promise.all([
         ...createTaxReturnDataDto.income.map((income) =>
           this.incomeModel.create(
-            {
-              taxreturn_id: taxReturn.id,
-              employer_national_id: income.employer_national_id,
-              employer: income.employer,
-              income: income.income,
-            } as Partial<Income>,
+            { ...income, taxreturn_id: taxReturn.id },
             { transaction }
           )
         ),
         ...createTaxReturnDataDto.cars.map((car) =>
           this.carsModel.create(
-            {
-              taxreturn_id: taxReturn.id,
-              year_bought: car.year_bought,
-              registration_number: car.registration_number,
-              amount: car.amount,
-            } as Partial<Cars>,
+            { ...car, taxreturn_id: taxReturn.id },
             { transaction }
           )
         ),
         ...createTaxReturnDataDto.realestates.map((realestate) =>
           this.realestatesModel.create(
-            {
-              taxreturn_id: taxReturn.id,
-              address: realestate.address,
-              registration_number: realestate.registration_number,
-              realastate_value: realestate.realastate_value,
-            } as Partial<Realestates>,
+            { ...realestate, taxreturn_id: taxReturn.id },
             { transaction }
           )
         ),
         ...createTaxReturnDataDto.mortgages.map((mortgage) =>
           this.mortgagesModel.create(
-            {
-              taxreturn_id: taxReturn.id,
-              year_bought: mortgage.year_bought,
-              date: new Date(mortgage.date), // Convert string to Date
-              amount: mortgage.amount,
-              address: mortgage.address,
-              loan_id: mortgage.loan_id,
-              period_of_loan: mortgage.period_of_loan,
-              loan_provider: mortgage.loan_provider,
-              loan_provider_national_id: mortgage.loan_provider_national_id,
-              principal: mortgage.principal,
-              interest: mortgage.interest,
-              remaining: mortgage.remaining,
-            } as Partial<Mortgages>,
+            { ...mortgage, taxreturn_id: taxReturn.id },
+            { transaction }
+          )
+        ),
+        ...createTaxReturnDataDto.otherLoans.map((otherLoan) =>
+          this.otherLoansModel.create(
+            { ...otherLoan, taxreturn_id: taxReturn.id },
             { transaction }
           )
         ),
         ...createTaxReturnDataDto.benefits.map((benefit) =>
           this.benefitsModel.create(
-            {
-              taxreturn_id: taxReturn.id,
-              from: benefit.from,
-              amount: benefit.amount,
-              name: benefit.name,
-              type_of_benefit: benefit.type_of_benefit,
-            } as Partial<Benefits>,
+            { ...benefit, taxreturn_id: taxReturn.id },
             { transaction }
           )
         ),
