@@ -5,7 +5,13 @@ import {
   Param,
   Version,
 } from '@nestjs/common';
-import { ApiOkResponse, ApiTags } from '@nestjs/swagger';
+import {
+  ApiOkResponse,
+  ApiOperation,
+  ApiParam,
+  ApiResponse,
+  ApiTags,
+} from '@nestjs/swagger';
 
 import { Person } from '../models/person.model';
 import { NationalRegistryService } from './national-registry.service';
@@ -19,6 +25,25 @@ export class NationalRegistryV1Controller {
 
   @Version('1')
   @Get(':national_id')
+  @ApiOperation({
+    summary: 'Get a person by national ID',
+    description:
+      'Retrieves an individual from the national registry using their national ID.',
+  })
+  @ApiParam({
+    name: 'national_id',
+    description: 'The national ID of the person to be retrieved',
+    example: '1234567890',
+  })
+  @ApiResponse({
+    status: 200,
+    description: 'The person details retrieved successfully.',
+    type: Person,
+  })
+  @ApiResponse({
+    status: 404,
+    description: 'Person with the specified national ID not found.',
+  })
   @ApiOkResponse({ type: Person })
   async getByNationalId(
     @Param('national_id') national_id: string

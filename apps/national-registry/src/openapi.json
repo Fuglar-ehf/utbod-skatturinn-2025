@@ -3,20 +3,23 @@
   "paths": {
     "/national-registry/v1/people/{national_id}": {
       "get": {
+        "description": "Retrieves an individual from the national registry using their national ID.",
         "operationId": "NationalRegistryV1Controller_getByNationalId_v1",
         "parameters": [
           {
             "name": "national_id",
             "required": true,
             "in": "path",
+            "description": "The national ID of the person to be retrieved",
             "schema": {
+              "example": "1234567890",
               "type": "string"
             }
           }
         ],
         "responses": {
           "200": {
-            "description": "",
+            "description": "The person details retrieved successfully.",
             "content": {
               "application/json": {
                 "schema": {
@@ -24,8 +27,12 @@
                 }
               }
             }
+          },
+          "404": {
+            "description": "Person with the specified national ID not found."
           }
         },
+        "summary": "Get a person by national ID",
         "tags": [
           "People"
         ]
@@ -34,12 +41,21 @@
   },
   "info": {
     "title": "National Registry API",
-    "description": "API for National Registry service",
-    "version": "1.0",
-    "contact": {}
+    "description": "Mock API for National Registry service",
+    "version": "v1.0.0",
+    "contact": {
+      "name": "Fuglar ehf.",
+      "url": "https://www.fuglar.com/",
+      "email": "fuglar@fuglar.com"
+    }
   },
   "tags": [],
-  "servers": [],
+  "servers": [
+    {
+      "url": "http://localhost:[port]/national-registry",
+      "description": "Development server"
+    }
+  ],
   "components": {
     "schemas": {
       "Person": {
@@ -91,5 +107,12 @@
         ]
       }
     }
-  }
+  },
+  "x-category": [
+    "personal",
+    "official"
+  ],
+  "x-pricing": [
+    "free"
+  ]
 }

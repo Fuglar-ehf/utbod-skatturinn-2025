@@ -18,8 +18,14 @@ async function bootstrap() {
   // Swagger config
   const config = new DocumentBuilder()
     .setTitle('Skatturinn API')
-    .setDescription('API documentation for Skatturinn')
-    .setVersion('1.0')
+    .setDescription(
+      'Backend service for the Icelandic Revenue and Customs (Skatturinn)'
+    )
+    .setVersion('v1.0.0')
+    .setContact('Fuglar ehf.', 'https://www.fuglar.com/', 'fuglar@fuglar.com')
+    .addServer('http://localhost:[port]/api', 'Development server')
+    .addExtension('x-category', ['personal', 'official'])
+    .addExtension('x-pricing', ['free'])
     .build();
 
   const document = SwaggerModule.createDocument(app, config);
