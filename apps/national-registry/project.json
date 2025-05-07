@@ -1,0 +1,29 @@
+{
+  "name": "national-registry",
+  "sourceRoot": "apps/national-registry/src",
+  "projectType": "application",
+  "targets": {
+    "build": {
+      "executor": "@nx/js:tsc",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/apps/national-registry/api",
+        "main": "apps/national-registry/src/main.ts",
+        "tsConfig": "apps/national-registry/tsconfig.app.json"
+      }
+    },
+    "serve": {
+      "executor": "@nx/js:node",
+      "options": {
+        "buildTarget": "national-registry:build"
+      }
+    },
+    "dev-services": {
+      "executor": "nx:run-commands",
+      "options": {
+        "commands": ["docker compose up -d national_registry_db"],
+        "cwd": "apps/national-registry"
+      }
+    }
+  }
+}
