@@ -17,8 +17,17 @@ async function bootstrap() {
 
   const config = new DocumentBuilder()
     .setTitle('National Registry API')
-    .setDescription('API for National Registry service')
-    .setVersion('1.0')
+    .setDescription('Mock API for National Registry service')
+    .setVersion('v1.0.0')
+    .setContact('Fuglar ehf.', 'https://www.fuglar.com/', 'fuglar@fuglar.com')
+    .addServer(
+      'http://localhost:[port]/national-registry',
+      'Development server'
+    )
+    .addBearerAuth()
+    .addApiKey({ type: 'apiKey', name: 'apiKey', in: 'header' }, 'API Key')
+    .addExtension('x-category', ['personal', 'official'])
+    .addExtension('x-pricing', ['free'])
     .build();
 
   const document = SwaggerModule.createDocument(app, config);

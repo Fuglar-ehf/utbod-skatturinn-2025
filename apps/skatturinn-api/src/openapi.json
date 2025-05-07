@@ -3,10 +3,12 @@
   "paths": {
     "/api/v1/tax-return-data": {
       "post": {
+        "description": "Create a new tax return data entry including income, cars, real estates, mortgages, and benefits",
         "operationId": "TaxReturnDataV1Controller_createTaxReturnData_v1",
         "parameters": [],
         "requestBody": {
           "required": true,
+          "description": "The payload to create tax return data",
           "content": {
             "application/json": {
               "schema": {
@@ -23,7 +25,7 @@
             "description": "Invalid data provided."
           }
         },
-        "summary": "Create a new tax return data entry including income, cars, real estates, mortgages, and benefits",
+        "summary": "Create a new tax return data",
         "tags": [
           "Tax Return Data"
         ]
@@ -32,13 +34,34 @@
   },
   "info": {
     "title": "Skatturinn API",
-    "description": "API documentation for Skatturinn",
-    "version": "1.0",
-    "contact": {}
+    "description": "Backend service for the Icelandic Revenue and Customs (Skatturinn)",
+    "version": "v1.0.0",
+    "contact": {
+      "name": "Fuglar ehf.",
+      "url": "https://www.fuglar.com/",
+      "email": "fuglar@fuglar.com"
+    }
   },
   "tags": [],
-  "servers": [],
+  "servers": [
+    {
+      "url": "http://localhost:[port]/api",
+      "description": "Development server"
+    }
+  ],
   "components": {
+    "securitySchemes": {
+      "bearer": {
+        "scheme": "bearer",
+        "bearerFormat": "JWT",
+        "type": "http"
+      },
+      "API Key": {
+        "type": "apiKey",
+        "in": "header",
+        "name": "apiKey"
+      }
+    },
     "schemas": {
       "CreateIncomeDto": {
         "type": "object",
@@ -274,5 +297,12 @@
         ]
       }
     }
-  }
+  },
+  "x-category": [
+    "personal",
+    "official"
+  ],
+  "x-pricing": [
+    "free"
+  ]
 }

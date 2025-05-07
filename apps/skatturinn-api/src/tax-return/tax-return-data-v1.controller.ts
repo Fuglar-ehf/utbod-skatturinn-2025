@@ -1,5 +1,5 @@
 import { Body, Controller, Post, HttpStatus, Version } from '@nestjs/common';
-import { ApiTags, ApiOperation, ApiResponse } from '@nestjs/swagger';
+import { ApiTags, ApiOperation, ApiResponse, ApiBody } from '@nestjs/swagger';
 import { CreateTaxReturnDataDto } from './dto/create-tax-return-data.dto';
 import { TaxReturnDataService } from './tax-return-data.service';
 
@@ -11,8 +11,13 @@ export class TaxReturnDataV1Controller {
   @Version('1')
   @Post()
   @ApiOperation({
-    summary:
+    summary: 'Create a new tax return data',
+    description:
       'Create a new tax return data entry including income, cars, real estates, mortgages, and benefits',
+  })
+  @ApiBody({
+    description: 'The payload to create tax return data',
+    type: CreateTaxReturnDataDto,
   })
   @ApiResponse({
     status: HttpStatus.CREATED,
