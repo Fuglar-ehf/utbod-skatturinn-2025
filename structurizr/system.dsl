@@ -15,4 +15,10 @@ taxReturnPortal = softwareSystem "Tax Return Portal" "Enables users to file thei
         technology "PostgreSQL"
         tags "Database"
     }
+
+    skatturXRoad = container "Skattur X-Road Security Server" {
+        description "Provides secure data exchange between systems"
+        technology "X-Road"
+        tags "Existing System"
+    }
 }
