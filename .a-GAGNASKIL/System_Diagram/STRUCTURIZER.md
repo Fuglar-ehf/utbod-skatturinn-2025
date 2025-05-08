@@ -17,10 +17,14 @@ Structurizr is a tool for creating software architecture diagrams using the C4 m
 ## System Diagram
 
 ### Context
-![Context](./images/structurizr-1-SystemContext-001.png)
+![Context](./structurizr-1-SystemContext-001.png)
+![Context Key](./structurizr-1-SystemContext-001-key.png)
+
+
 
 ### Containers
-![Containers](./images/structurizr-1-Container-001.png)
+![Containers](./structurizr-1-Container-001.png)
+![Containers Key](./structurizr-1-Container-001-key.png)
 
 ## Setting Up Structurizr
 
