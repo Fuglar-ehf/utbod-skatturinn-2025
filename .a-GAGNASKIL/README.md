@@ -33,7 +33,9 @@
   * [Github README.md](../README.md)
   * [Github STRUCTURIZER.md](../docs/STRUCTURIZER.md)
   * [Github DATABASES.md](../docs/DATABASES.md)
-  Gagnagrunnsmynd: [Databases](./Database/DATABASES.md)
+
+**Gagnagrunnsmynd** 
+* [Databases](./Database/DATABASES.md)
 
 ### Framendi
 **FIGMA skjöl**

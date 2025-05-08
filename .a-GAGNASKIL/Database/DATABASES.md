@@ -16,7 +16,10 @@ A PostgreSQL database for the Skatturinn API service. It is a relational databas
 ### Database Architecture Diagram
 The database schemas were designed using the web tool [dbdiagram.io](https://dbdiagram.io).
 
-![Database Architecture](./images/database_diagram.png)
+* The database **skatturinn_db-api** is an 8 table relational database
+* The database **national-registry** is a 1 table database to mock connetion to the National Registry of Iceland (Þjóðskrá)
+
+![Database Architecture](./database_diagram.png)
 
 
 ## Database Setup with Docker Compose
