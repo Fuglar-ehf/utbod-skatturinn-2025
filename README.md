@@ -23,6 +23,10 @@ This project is an Nx integrated monorepo containing two main backend services:
 * **ESLint and Prettier**: For code quality and formatting.
 * **OpenAPI**: OpenAPI documentation using Swagger
 * **Versioning**: Controllers use NestJS versioning
+* **Structurizer**: Scripting documentation based on C4 model
+* **dbdiagram.io**: Online database schema editor
+* **Playwright**: A powerful end-to-end testing framework for web applications, supporting multiple browsers and automation of UI interactions. 
+* **CI**: Continuous Integration – A development practice where code changes are automatically tested and integrated into the main codebase, ensuring early detection of issues. 
 
 
 # Project Commands

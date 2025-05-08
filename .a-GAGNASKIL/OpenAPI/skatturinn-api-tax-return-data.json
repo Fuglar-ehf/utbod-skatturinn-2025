@@ -1,0 +1,62 @@
+{
+  "nationalid": "string",
+  "year": "string",
+  "income": [
+    {
+      "employer_national_id": "string",
+      "employer": "string",
+      "income": 0
+    }
+  ],
+  "cars": [
+    {
+      "year_bought": 0,
+      "registration_number": "string",
+      "amount": 0
+    }
+  ],
+  "realestates": [
+    {
+      "address": "string",
+      "registration_number": "string",
+      "realastate_value": 0
+    }
+  ],
+  "mortgages": [
+    {
+      "year_bought": 0,
+      "date": "string",
+      "amount": 0,
+      "address": "string",
+      "loan_id": "string",
+      "period_of_loan": 0,
+      "loan_provider": "string",
+      "loan_provider_national_id": "string",
+      "principal": 0,
+      "interest": 0,
+      "remaining": 0
+    }
+  ],
+  "otherLoans": [
+    {
+      "loan_description": "string",
+      "loan_provider_national_id": "string",
+      "interest": 0,
+      "remaining": 0
+    }
+  ],
+  "allowances": [
+    {
+      "amount": 0,
+      "type_of_allowance": "string"
+    }
+  ],
+  "benefits": [
+    {
+      "payer_national_id": "string",
+      "payer_name": "string",
+      "amount": 0,
+      "type_of_benefit": "string"
+    }
+  ]
+}

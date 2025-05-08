@@ -1,0 +1,12 @@
+{
+  "national_id": "string",
+  "name": "string",
+  "nominative_case_address": "string",
+  "dative_case_address": "string",
+  "postal_code": "string",
+  "gender": "string",
+  "birth_date": "2025-05-08T11:57:42.989Z",
+  "family_id": "string",
+  "marital_status": "string",
+  "nationality": "string"
+}
